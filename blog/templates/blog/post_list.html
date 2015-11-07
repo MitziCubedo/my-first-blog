@@ -1,22 +1,30 @@
-    <html>
-        <head>
-            <title>Mitzi Cubedo's blog</title>
-        </head>
-        <body>
-            <div>
-                <h1><a href="">Django Girls Blog</a></h1>
-            </div>
+<html>
+    <head>
+        <title>Mitzi Cubedo's blog</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="">Django Girls Blog</a></h1>
+        </div>
 
+        {% for post in posts %}
             <div>
-                <p>published: 7.11.2015, 12:11</p>
-                <h2>My first post</h2>
-                <p>Welcome!</p>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaks }}</p>
             </div>
+        {% endfor %}
 
-            <div>
-                <p>published: 7.11.2015, 12:12</p>
-                <h2>My second post</h2>
-                <p>Hello everyone!</p>
-            </div>
-        </body>
-    </html>
+        <div>
+            <p>published: 7.11.2015, 12:11</p>
+            <h2>My first post</h2>
+            <p>Welcome!</p>
+        </div>
+
+        <div>
+            <p>published: 7.11.2015, 12:12</p>
+            <h2>My second post</h2>
+            <p>Hello everyone!</p>
+        </div>
+    </body>
+</html>
